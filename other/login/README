@@ -1,0 +1,30 @@
+###################################
+# Requirements before  running the 
+# 	sources code
+
+# There is one requirement before running the code successfully
+# choosing one way to prepare it.
+
+##1: Uncomment the following code - This is easier than the #2 method
+
+Consider this commment in the sources code:
+
+	#### Fixing the missing Firefox geckodirver 
+	# import geckodriver_autoinstaller
+	# geckodriver_autoinstaller.install()
+	
+Before you uncomment the code and re-run it, make sure you install the 'geckodriver_autoinstaller' module
+If you haven't installed it, please run this script:
+	pip install geckodriver-autoinstaller OR
+	pip3 install geckodriver-autoinstaller
+
+
+##2: Copy the 'geckodriver' file to the system's binary directory. 
+In Linux, you can copy the file to '/usr/bin' or '/usr/local/bin'
+and re-run the code. (For Firefox-only)
+
+The file is attached in the same directory of the source code
+
+If you are using Chrome or other Browser, consider to do the #1 method or go to Duckduckgo to
+asking 'how to install geckodriver for Chrome/Safari... on Windows/Ubuntu...
+
