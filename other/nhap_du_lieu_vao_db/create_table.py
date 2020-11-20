@@ -2,8 +2,8 @@ import mysql.connector as con
 from mysql.connector import errorcode
 from create_db import *
 from time import sleep
-##########################################################
-# Please run the create_db.py BEFORE running this scripts
+###########################################################
+# Please run the create_db.py BEFORE running this scripts #
 
 table = (
     'CREATE TABLE customer ('
@@ -45,28 +45,30 @@ insert_values = (
 "(69923,'pierre andre','martel','','10 DE BRAINE','','BLAINVILLE','QC','j7b1z1','Canada','514-629-0849','pierre-andremartel@hotmail.com','10-01-19 01:32 PM')"
 )
 
+#### CHECKING ALREADY RUNNING THE CREATE DATABASE OR NOT
 def checking_db_existing():
-    global user, passw, conn
+    global user, passw, connects
     while True:
         ans = input ('Do you run the code from "create_db.py" ? (Y/n)\n>>').lower()
         if ans == 'y':
-            user, passw, conn = login_acc()
+            user, passw, connects = login_acc()
             break
         elif ans == 'n':
-            user, passw, conn = login_acc()
-            create_database()
+            user, passw, connects = login_acc()
+            create_database(connects) # This function is from 'create_db.py' module
             break
         else:
             print ('Wrong answer please re-type it.')
             continue
         
-#### CREATE TABLE AND INSERT THE DATA ###
+#### CREATE TABLE AND INSERT THE DATA
 def create_table (cursor):
     try:
         cursor.execute (table)
         cursor.execute (insert_values)
     except con.Error as err:
         print ('Failing creating database: {}'.format (err))
+        print ('Please reconsider the sources code')
         exit (1)
 
 
@@ -74,14 +76,14 @@ def create_table (cursor):
 
 
 checking_db_existing()
-conn  = con.connect(user=user, password=passw, host='127.0.0.1',
+connects  = con.connect(user=user, password=passw, host='127.0.0.1',
                     auth_plugin='mysql_native_password',
                     database='customer_details')
 print ('********************************')
 sleep (1)
 print ('Connecting to MySQL Server...')
 sleep(2)
-cursor = conn.cursor()
+cursor = connects.cursor()
 before_create = ['USE customer_details',
         'DROP TABLE IF EXISTS customer']
 for i in before_create:
@@ -97,7 +99,7 @@ sleep(1.5)
 print ('********************************')
 print ('Done............')
 create_table(cursor)
-# COMMIT THE DATA TO THE DATABASE & AND CLOSE
-conn.commit()
-cursor.close(), conn.close()
 
+# COMMIT THE DATA TO THE DATABASE & AND CLOSE
+connects.commit()
+cursor.close(), connects.close()
