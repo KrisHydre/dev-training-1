@@ -46,3 +46,5 @@ while True:
         break
     except errorhandler.NoSuchElementException:
         continue
+sleep(30)
+browser.close()
