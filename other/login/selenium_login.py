@@ -5,7 +5,6 @@ Created on Wed Nov 18 15:56:05 2020
 
 @author: krish
 """
-
 ########################################
 ## Login the Website By SELENIUM
 ## and print the Name of the Log-in User
@@ -47,6 +46,3 @@ while True:
         break
     except errorhandler.NoSuchElementException:
         continue
-
-    
-    
