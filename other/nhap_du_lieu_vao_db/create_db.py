@@ -11,8 +11,8 @@ def login_acc():
 # CREATE A CONNECTION WITH MYSQL SERVER
     while True:
         try:
-            User = input ('Please type the user name to login MySQL Server\n>>')
-            Password = input('And the password\n>>')
+            User = input ('Please type the USERNAME to login MySQL Server\n>>')
+            Password = input('And the PASSWORD\n>>')
             connects = con.MySQLConnection(user=User, password=Password,
                              host='127.0.0.1', auth_plugin='mysql_native_password')
             break
