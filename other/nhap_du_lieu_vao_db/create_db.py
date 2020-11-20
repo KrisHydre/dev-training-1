@@ -18,10 +18,11 @@ def login_acc():
             break
         except con.Error as err:
             print ('Fail to connect to MySQL. {}.'.format (err))
+            print ('Maybe the user-pass is not true. Please re-consider that.')
             continue
     return User, Password, connects
     
-def create_database():
+def create_database(connects):
 # CREATE A CURSOR & DB   
     while True:   
         try:  
