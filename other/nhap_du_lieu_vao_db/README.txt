@@ -10,3 +10,4 @@
 	Python Interpreter, and Standard Lib
 	mysql-connector-python (install by 'pip3 install mysql-connector-python')
 	MySQL Server
+#4. Please re-check the 'customer.csv' file is the same directory with the source code.
