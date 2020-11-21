@@ -1,3 +1,9 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Nov 21 17:03:08 2020
+@author: krish
+"""
 from time import sleep
 import mysql.connector as con
 from mysql.connector import errorcode
