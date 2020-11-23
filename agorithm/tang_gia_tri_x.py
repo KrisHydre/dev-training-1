@@ -9,6 +9,7 @@ def tang_x(x,y):
     buoc = 0 # số bước để tăng giá trị của x
     if x > y:
         tang_x(y,x)
+       # Đảo ngược giá trị của hàm nếu người dùng nhập lẫn giá trị x và y
     else:
         while y > x:
             x *= 2
