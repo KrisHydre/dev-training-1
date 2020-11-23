@@ -4,34 +4,9 @@
 Created on Wed Nov 18 11:08:12 2020
 
 @author: krish
-"""
-def tang_x_x(x,y):
-    buoc = 0
-    # Gia su x, va y la 2 so nguyen
-    if x>y:
-        tang_x(y,x)
-    else:
-        a = int (y/x)
-        if a == 1:
-            b = y-x
-            for i in range (b):
-                x +=1
-                buoc +=1
-            # print ('Gia tri moi cua x:', x)
-            # print ('Gia tri cua y:', y)
-            print ('So buoc de tang gia tri:', b)
-        else:
-            x *= a
-            b = y - x
-            for i in range (b):
-                x +=1
-                buoc +=1
-            # print ('Gia tri moi cua x:', x)
-            # print ('Gia tri cua y:', y)
-            print ('So buoc de tang gia tri:', b)
-            
+"""        
 def tang_x(x,y):
-    buoc=0
+    buoc = 0 # số bước để tăng giá trị của x
     if x > y:
         tang_x(y,x)
     else:
